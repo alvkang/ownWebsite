@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page - Experimental Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="apcsp.html" class="nav-link">APCSP</a></li>
+            <li><a href="more.html" class="nav-link">More</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="resources.html" class="nav-link active">Resources</a></li> <!-- Active Link -->
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <!-- Protected Content -->
+    <div class="resources-container">
+        <div id="password-form" class="password-form">
+            <h2>Enter Password to Access this Page</h2>
+            <input type="password" id="password" placeholder="Password">
+            <button id="submit-password" class="small-btn">Submit</button>
+            <p id="error-message" class="error-message"></p>
+        </div>
+
+        <div id="resources-content" class="resources-content" style="display: none;">
+            <h2>yo wassup ng</h2>
+            <p>nyooom</p>
+            <!-- Add more protected content here -->
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
