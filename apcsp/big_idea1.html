@@ -6,7 +6,126 @@
     <title>Big Idea 1: Creative Development - APCSP</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Centering headers */
+        .subpage-container h2, .subpage-container h3 {
+            text-align: center;
+        }
 
+        /* Add spacing after Exam Weighting */
+        .exam-weighting {
+            margin-bottom: 2em; /* Equivalent to two line breaks */
+            text-align: center; /* Ensure it's centered */
+        }
+
+        /* Add spacing after each topic title */
+        .subpage-container h3 {
+            margin-top: 1em; /* Equivalent to one line break */
+            margin-bottom: 1em; /* Equivalent to one line break */
+        }
+
+        /* Indenting nested lists */
+        .subpage-container ul ul {
+            margin-left: 40px; /* Adjust as needed for desired indentation */
+        }
+
+        /* Specific indentation for ordered lists within Basic Processes */
+        .basic-processes {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .basic-processes li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em; /* Indent the list items */
+            position: relative;
+        }
+
+        .basic-processes li::before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Initialize counter for ordered list */
+        .basic-processes {
+            counter-reset: item;
+        }
+
+        /* Spacing between sections */
+        .subpage-container section {
+            margin-bottom: 2em; /* Adds space equivalent to two line breaks */
+        }
+
+        /* Styling for Additional Notes */
+        .additional-notes {
+            margin-top: 2em;
+            text-align: left; /* Ensure it's left-aligned */
+            font-size: 1em; /* Same as bullet points */
+        }
+
+        .additional-notes p {
+            margin-bottom: 1em; /* Line space after the paragraph */
+        }
+
+        /* Styling for Practice Problems */
+        .practice-problems {
+            margin-top: 2em;
+        }
+
+        .practice-problems h3 {
+            text-align: center;
+            color: #ff5722;
+        }
+
+        .practice-problems p {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2em; /* Two line spaces after the text */
+        }
+
+        .practice-problems .question {
+            margin-bottom: 1em; /* Reduced space between questions */
+        }
+
+        .practice-problems .question p {
+            text-align: left;
+            font-weight: normal; /* Unbold the question */
+            margin-bottom: 0.5em; /* Reduced space between question and answers */
+        }
+
+        .practice-problems .question ul {
+            list-style-type: none; /* Remove default list styling */
+            padding-left: 20px;
+        }
+
+        .practice-problems .question ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.3em; /* Reduce space between answer choices */
+        }
+
+        .practice-problems .question ul li::before {
+            content: ""; /* No additional content */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Adjust font size for consistency */
+        body {
+            font-size: 1em;
+        }
+
+        /* Ensure code snippets are styled appropriately */
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -29,7 +148,152 @@
     <!-- Subpage Content -->
     <div class="subpage-container">
         <h2>Big Idea 1: Creative Development</h2>
-        <p>Content for Big Idea 1 goes here.</p>
+        <p class="exam-weighting"><strong>Exam Weighting: 10-13%</strong></p>
+
+        <!-- Section 1.1 Collaboration -->
+        <section>
+            <h3>1.1 Collaboration</h3>
+            <ul>
+                <li><strong>Computing Innovation</strong> includes a program as an important part of its function
+                    <ul>
+                        <li>Can be both physical and nonphysical: Ex. Self driving car, ChatGPT, etc.</li>
+                    </ul>
+                </li>
+                <li>Effective collaboration produces computing innovations that reflect the diversity of talents and perspectives of those who designed it.
+                    <ul>
+                        <li>Collaboration helps avoid bias and errors</li>
+                        <li>Consultation and communication</li>
+                        <li>Collaboration practices communication, consensus building, conflict resolution, negotiation
+                            <ul>
+                                <li>The exam will ask questions like “Which choice helps reduce bias during programming?”</li>
+                            </ul>
+                        </li>
+                        <li>Information gathered from collaboration can be used to understand the purpose of a program</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 1.2 Program Function and Purpose -->
+        <section>
+            <h3>1.2 Program Function and Purpose</h3>
+            <ul>
+                <li>Purpose of computing innovations is to solve problems or to pursue interest through creative expressions</li>
+                <li><strong>Program</strong>: A collection of program statements that perform a specific task when run by a computer. A program is often referred to as software</li>
+                <li><strong>Code segment</strong>: A collection of program statements that is part of a program</li>
+                <li>Behavior of a program is how program functions during execution and is often described by how a user interacts with it</li>
+                <li>Program inputs: Data sent to a computer, such as tactile, audio, visual, or text</li>
+                <li>Event: Associated with an action and supplies input data to a program</li>
+                <li>Program outputs: Data sent from a program to a device</li>
+            </ul>
+        </section>
+
+        <!-- Section 1.3 Program Design and Development -->
+        <section>
+            <h3>1.3 Program Design and Development</h3>
+            <ul>
+                <li>Basic Processes (According to Collegeboard)
+                    <ul class="basic-processes">
+                        <li>Investigating and reflecting</li>
+                        <li>Designing</li>
+                        <li>Prototyping</li>
+                        <li>Testing</li>
+                    </ul>
+                </li>
+                <li><strong>Iterative Development Process</strong>: Requires refinement and revision based on feedback, testing, or reflection throughout the process. Basically, you are repeatedly checking the program for improvements</li>
+                <li><strong>Incremental Development Process</strong>: Breaks the problem into smaller pieces and makes sure each piece works before adding it to the whole</li>
+                <li>Design of a program incorporates investigation to determine its requirements</li>
+                <li><strong>Program documentation</strong>: Written description of the function of a code segment, event, procedure, or program and how it was developed</li>
+                <li><strong>Comments</strong>: Form of program documentation written into the program to be read by people and don’t affect how a program runs</li>
+                <li><strong>Programmers should always document a program</strong>
+                    <ul>
+                        <li>Helps maintain correct programs</li>
+                        <li>Not all languages support comments so other methods of documentation may be required</li>
+                    </ul>
+                </li>
+                <li>It is important to acknowledge any code segments that were developed collaboratively or by another source</li>
+            </ul>
+        </section>
+
+        <!-- Section 1.4 Identifying and Correcting Errors -->
+        <section>
+            <h3>1.4 Identifying and Correcting Errors</h3>
+            <ul>
+                <li><strong>Logic error</strong>: Mistake in the algorithm or program that causes it to behave incorrectly or unexpectedly.
+                    <ul>
+                        <li>Logic error is often mistaken with other errors. Logic error does not break the program; it is when a program output is incorrect. Ex: 2 + 2 = 5</li>
+                    </ul>
+                </li>
+                <li><strong>Syntax error</strong>: Mistake in a program where the rules of the programming languages are not followed. Ex. <code>pritn("Hello world")</code></li>
+                <li><strong>Run-time error</strong>: Mistake in the program during the execution of a program.
+                    <ul>
+                        <li>Ex: You want to find the 5th index of the string, but the string only has 4 characters. It will give you a run-time (IndexOutOfBounds) error.</li>
+                    </ul>
+                </li>
+                <li><strong>Overflow error</strong>: An error that occurs when a computer attempts to handle a number that is outside the defined range
+                    <ul>
+                        <li>Ex: If you put a very large number (1000…….0000) the program will cause this error. Usually languages have a 32-bit limit on integers but you don’t need to know this (2147483648)</li>
+                    </ul>
+                </li>
+                <li>Effective ways to handle errors
+                    <ul>
+                        <li>Test cases, hand tracing, visualizations, debuggers, adding extra output statements</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Additional Notes -->
+        <div class="additional-notes">
+            <p>
+                Most of the concepts in this unit are intuitive and most questions can be solved using common sense (This is probably the easiest unit btw). I mean you obviosuly know that a program is code run by a computer to do tasks or something. Some specific topics that are very likely to be on the exam:
+            </p>
+            <ul>
+                <li>Computing Innovation</li>
+                <li>Different Development Processes (Iterative, Incremental)</li>
+                <li>Documentation</li>
+                <li>Types of Errors</li>
+            </ul>
+        </div>
+
+        <!-- Practice Problems -->
+        <div class="practice-problems">
+            <h3>Practice Problems</h3>
+            <p>These are questions from the actual AP Exam.</p>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <p>Which of the following is a true statement about program documentation?</p>
+                <ul>
+                    <li>(A) Program documentation should not be changed after it is first written.</li>
+                    <li>(B) Program documentation is only needed for programs in development; it is not needed after a program is completed.</li>
+                    <li>(C) Program documentation is useful when programmers collaborate but not when a programmer works individually on a project.</li>
+                    <li>(D) Program documentation is useful during initial program development and also when modifications are made to existing programs.</li>
+                </ul>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>A computer program uses 3 bits to represent integers. When the program adds the decimal (base 10) numbers 5 and 3, the result is 0. Which of the following is the best explanation for the result?</p>
+                <ul>
+                    <li>(A) An overflow error occurred.</li>
+                    <li>(B) A round-off error occurred.</li>
+                    <li>(C) The result was affected by lossy data compression.</li>
+                    <li>(D) The result was approximated by a floating-point representation.</li>
+                </ul>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>Historically, it has been observed that computer processing speeds tend to double every two years. Which of the following best describes how technology companies can use this observation for planning purposes?</p>
+                <ul>
+                    <li>(A) Technology companies can accurately predict the dates when new computing innovations will be available to use.</li>
+                    <li>(B) Technology companies can plan to double the costs of new products each time advances in processing speed occur.</li>
+                    <li>(C) Technology companies can set research and development goals based on anticipated processing speeds.</li>
+                    <li>(D) Technology companies can spend less effort developing new processors because processing speed will always improve at the observed rate.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src="../js/script.js"></script>
