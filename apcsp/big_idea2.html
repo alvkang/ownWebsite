@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Idea 1: Creative Development - APCSP</title>
+    <title>Big Idea 2: Data - APCSP</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Centering headers */
+        .subpage-container h2, .subpage-container h3 {
+            text-align: center;
+        }
 
+        /* Add spacing after Exam Weighting */
+        .exam-weighting {
+            margin-bottom: 2em; /* Equivalent to two line breaks */
+            text-align: center; /* Ensure it's centered */
+        }
+
+        /* Add spacing after each topic title */
+        .subpage-container h3 {
+            margin-top: 1em; /* Equivalent to one line break */
+            margin-bottom: 1em; /* Equivalent to one line break */
+        }
+
+        /* Indenting nested lists */
+        .subpage-container ul ul {
+            margin-left: 40px; /* Adjust as needed for desired indentation */
+        }
+
+        /* Styling for code blocks */
+        .code-window {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        /* Styling for image alignment */
+        .image-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .image-section img {
+            max-width: 200px;
+            border-radius: 8px;
+        }
+
+        /* Styling for additional notes */
+        .additional-notes {
+            margin-top: 2em;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        /* Styling for Example Problems */
+        .practice-problems {
+            margin-top: 2em;
+        }
+
+        .practice-problems h3 {
+            text-align: center;
+            color: #ff5722;
+        }
+
+        .practice-problems p {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2em; /* Two line spaces after the text */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -28,10 +96,154 @@
 
     <!-- Subpage Content -->
     <div class="subpage-container">
-        <h2>Big Idea 1: Creative Development</h2>
-        <p>Content for Big Idea 1 goes here.</p>
-    </div>
+        <h2>Big Idea 2: Data</h2>
+        <p class="exam-weighting"><strong>Exam Weighting: 17-22%</strong></p>
 
-    <script src="../js/script.js"></script>
+        <!-- Section 2.1 Binary Numbers -->
+        <section>
+            <h3>2.1 Binary Numbers</h3>
+            <ul>
+                <li>Data values can be stored in variables, lists, or standalone constants</li>
+                <li>Computing devices represent data <em>digitally</em>, meaning the lowest-level components of any value are bits</li>
+                <li><em>Bits</em>: shorthand for binary digit and is either 0 or 1
+                    <ul>
+                        <li>A <em>byte</em> is 8 bits</li>
+                    </ul>
+                </li>
+                <li><em>Abstraction</em>: Process of reducing complexity by focusing on the main idea</li>
+                <li>Bits are grouped to represent abstraction, such as numbers, characters, colors, or literally anything on your computer</li>
+                <li><em>Analog data</em> have values that change smoothly (continuous values) unlike digital data that have discrete values
+                    <ul>
+                        <li>Using digital data to approximate analog data is an example of abstraction</li>
+                        <ul>
+                            <li>Sample technique: Measuring values of analog signal at regular intervals called samples</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>Understand that in many programming languages, integers are represented by a fixed number of bits, meaning there is a limit and if you exceed the limit you will get an overflow error</li>
+                <li>Number bases are used to represent data
+                    <ul>
+                        <li>Binary (base 2), Decimal (base 10)</li>
+                        <li>Know how to convert Binary → Decimal, Decimal → Binary</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Binary to Decimal Conversion</strong></p>
+            <div class="code-window">
+                Each digit of a binary number is a power of 2, starting from 0 at the right:
+
+                1001011(binary) = 1 * 2^0 + 1 * 2^1 + 0 * 2^2 + 1 * 2^3 + 0 * 2^4 + 0 * 2^5 + 1 * 2^6
+            </div>
+
+            <p><strong>Algorithm in Python</strong></p>
+            <div class="code-window">
+                def binary_to_decimal(binary_str):
+                    decimal = 0  # Initialize the decimal result
+                    length = len(binary_str)
+
+                    # Iterate through each character in the binary string
+                    for i in range(length):
+                        bit = int(binary_str[length - i - 1])  # Get the bit (from right to left)
+                        decimal += bit * (2 ** i)  # Add the bit value multiplied by its power of 2
+
+                    return decimal
+            </div>
+
+            <p><strong>Decimal to Binary</strong></p>
+            <div class="code-window">
+                def decimal_to_binary(decimal):
+                    if decimal == 0:
+                        return "0"
+
+                    binary = ""
+                    while decimal > 0:
+                        remainder = decimal % 2  # Get the remainder
+                        binary = str(remainder) + binary  # Add the remainder to the front of the binary string
+                        decimal = decimal // 2  # Update the decimal by integer division
+
+                    return binary
+            </div>
+        </section>
+
+        <!-- Section 2.2 Data Compression -->
+        <section>
+            <h3>2.2 Data Compression</h3>
+            <ul>
+                <li>Data compression reduces the number of bits (size) of stored data</li>
+                <ul>
+                    <li>Fewer bits doesn’t necessarily mean less information</li>
+                </ul>
+                <li><em>Lossless compression</em>: Reduce the number of bits without losing any original data</li>
+                <li><em>Lossy compression</em>: Significantly reduce the number of bits but provides an approximation of original data</li>
+                <ul>
+                    <li>Minimize data → Lossy; Data is important, cannot be changed → Lossless</li>
+                </ul>
+            </ul>
+        </section>
+
+        <!-- Section 2.3 Extracting Information from Data -->
+        <section>
+            <h3>2.3 Extracting Information from Data</h3>
+            <ul>
+                <li><em>Information</em>: Collection of facts and patterns extracted from data</li>
+                <li>More data → More opportunities for identifying trends, connections, addressing problems, finding correlations</li>
+                <li><em>Metadata</em>: Data about data
+                    <ul>
+                        <li>Ex. Date of an image taken. Data size of an image. Location of the image. But the image is not part of metadata</li>
+                        <li>Helpful for finding, organizing, and managing information</li>
+                    </ul>
+                </li>
+                <li>Challenges of processing data
+                    <ul>
+                        <li>Depends on the capabilities of user and tools</li>
+                        <li>Careful of incomplete, invalid, or sourced data</li>
+                    </ul>
+                </li>
+                <li>Large data sets are difficult to process for a single computer and may need parallel systems</li>
+                <li><em>Scalability</em>: Measure of a system’s ability to increase/decrease performance in response to changes in system processing demands</li>
+            </ul>
+        </section>
+
+        <!-- Section 2.4 Using Programs with Data -->
+        <section>
+            <div class="image-section">
+                <h3>2.4 Using Programs with Data</h3>
+                <img src="../images/2.4csp.png" alt="Data Representation">
+            </div>
+            <ul>
+                <li>Tables, diagrams, text, and visual tools are used to communicate insight and knowledge from data</li>
+                <li>Data filtering and search tools are important</li>
+                <li>Examples of processes that may be on the exam:
+                    <ul>
+                        <li>Combine, cluster, classify data to gain more knowledge</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Additional Notes -->
+        <div class="additional-notes">
+            <p>
+                Important concepts in this unit include binary-to-decimal conversion, lossless and lossy compressions, metadata, abstraction, and scalability. The idea of abstraction becomes more important in Unit 3 or just programming in general so it’s better to get used to it. Metadata is also a common concept in the exam; I’ve seen so many questions like “Which of the following is metadata?” and the answer choice is “The image inside the file”, “The data file was created”, and “What song does the video have?”. Also, the CED doesn’t explicitly say you need to know hexadecimal or other base conversions, but it’s probably better to know them. You will definitely see them in the mock tests tho.
+            </p>
+        </div>
+
+        <!-- Practice Problems -->
+        <div class="practice-problems">
+            <h3>Example Problems</h3>
+            <p>These are questions from the actual AP Exam.</p>
+
+            <!-- Question -->
+            <div class="question">
+                <p>When a cellular telephone user places a call, the carrier transmits the caller’s voice as well as the voice of the person who is called. The encoded voices are the data of the call. In addition to transmitting the data, the carrier also stores metadata. The metadata of the call include information such as the time the call is placed and the phone numbers of both participants. For which of the following goals would it be more useful to computationally analyze the metadata instead of the data?</p>
+                <ul>
+                    <li>I. To determine if a caller frequently uses a specific word</li>
+                    <li>II. To estimate the number of phone calls that will be placed next Monday between 10:30 A.M. and noon.</li>
+                    <li>III. To generate a list of criminal suspects when given the telephone number of a known criminal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
