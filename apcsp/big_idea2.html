@@ -14,19 +14,19 @@
 
         /* Add spacing after Exam Weighting */
         .exam-weighting {
-            margin-bottom: 2em; /* Equivalent to two line breaks */
-            text-align: center; /* Ensure it's centered */
+            margin-bottom: 2em;
+            text-align: center;
         }
 
         /* Add spacing after each topic title */
         .subpage-container h3 {
-            margin-top: 1em; /* Equivalent to one line break */
-            margin-bottom: 1em; /* Equivalent to one line break */
+            margin-top: 1em;
+            margin-bottom: 1em;
         }
 
         /* Indenting nested lists */
         .subpage-container ul ul {
-            margin-left: 40px; /* Adjust as needed for desired indentation */
+            margin-left: 40px;
         }
 
         /* Styling for code blocks */
@@ -72,14 +72,14 @@
         .practice-problems p {
             text-align: center;
             font-weight: bold;
-            margin-bottom: 2em; /* Two line spaces after the text */
+            margin-bottom: 2em;
         }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">gykang.com</div>
+        <div class="logo">Alvin's website with zero purpose</div>
         <ul class="nav-links">
             <li><a href="../index.html" class="nav-link">Home</a></li>
             <li><a href="../apcsp.html" class="nav-link">APCSP</a></li>
@@ -104,15 +104,15 @@
             <h3>2.1 Binary Numbers</h3>
             <ul>
                 <li>Data values can be stored in variables, lists, or standalone constants</li>
-                <li>Computing devices represent data <em>digitally</em>, meaning the lowest-level components of any value are bits</li>
-                <li><em>Bits</em>: shorthand for binary digit and is either 0 or 1
+                <li>Computing devices represent data <strong>digitally</strong>, meaning the lowest-level components of any value are bits</li>
+                <li><strong>Bits</strong>: shorthand for binary digit and is either 0 or 1
                     <ul>
-                        <li>A <em>byte</em> is 8 bits</li>
+                        <li>A <strong>byte</strong> is 8 bits</li>
                     </ul>
                 </li>
-                <li><em>Abstraction</em>: Process of reducing complexity by focusing on the main idea</li>
+                <li><strong>Abstraction</strong>: Process of reducing complexity by focusing on the main idea</li>
                 <li>Bits are grouped to represent abstraction, such as numbers, characters, colors, or literally anything on your computer</li>
-                <li><em>Analog data</em> have values that change smoothly (continuous values) unlike digital data that have discrete values
+                <li><strong>Analog data</strong> have values that change smoothly (continuous values) unlike digital data that have discrete values
                     <ul>
                         <li>Using digital data to approximate analog data is an example of abstraction</li>
                         <ul>
@@ -130,39 +130,40 @@
             </ul>
 
             <p><strong>Binary to Decimal Conversion</strong></p>
-            <div class="code-window">
-                Each digit of a binary number is a power of 2, starting from 0 at the right:
-
-                1001011(binary) = 1 * 2^0 + 1 * 2^1 + 0 * 2^2 + 1 * 2^3 + 0 * 2^4 + 0 * 2^5 + 1 * 2^6
-            </div>
+            <p>Each digit of a binary number is a power of 2, starting from 0 at the right:</p>
+            <p><code>1001011(binary) = 1 * 2^0 + 1 * 2^1 + 0 * 2^2 + 1 * 2^3 + 0 * 2^4 + 0 * 2^5 + 1 * 2^6</code></p>
 
             <p><strong>Algorithm in Python</strong></p>
             <div class="code-window">
-                def binary_to_decimal(binary_str):
-                    decimal = 0  # Initialize the decimal result
-                    length = len(binary_str)
+def binary_to_decimal(binary_str):
+    decimal = 0  # Initialize the decimal result
+    length = len(binary_str)
 
-                    # Iterate through each character in the binary string
-                    for i in range(length):
-                        bit = int(binary_str[length - i - 1])  # Get the bit (from right to left)
-                        decimal += bit * (2 ** i)  # Add the bit value multiplied by its power of 2
+    # Iterate through each character in the binary string
+    for i in range(length):
+        bit = int(binary_str[length - i - 1])  # Get the bit (from right to left)
+        decimal += bit * (2 ** i)  # Add the bit value multiplied by its power of 2
 
-                    return decimal
+    return decimal
             </div>
 
             <p><strong>Decimal to Binary</strong></p>
+            <p>Divide the decimal number by 2 until the quotient becomes 0. Write the remainders in reverse order to make a binary number.</p>
+            <p><strong>Example:</strong></p>
+            <p>137 → 10001001</p>
+
             <div class="code-window">
-                def decimal_to_binary(decimal):
-                    if decimal == 0:
-                        return "0"
+def decimal_to_binary(decimal):
+    if decimal == 0:
+        return "0"
 
-                    binary = ""
-                    while decimal > 0:
-                        remainder = decimal % 2  # Get the remainder
-                        binary = str(remainder) + binary  # Add the remainder to the front of the binary string
-                        decimal = decimal // 2  # Update the decimal by integer division
+    binary = ""
+    while decimal > 0:
+        remainder = decimal % 2  # Get the remainder
+        binary = str(remainder) + binary  # Add the remainder to the front of the binary string
+        decimal = decimal // 2  # Update the decimal by integer division
 
-                    return binary
+    return binary
             </div>
         </section>
 
@@ -174,8 +175,8 @@
                 <ul>
                     <li>Fewer bits doesn’t necessarily mean less information</li>
                 </ul>
-                <li><em>Lossless compression</em>: Reduce the number of bits without losing any original data</li>
-                <li><em>Lossy compression</em>: Significantly reduce the number of bits but provides an approximation of original data</li>
+                <li><strong>Lossless compression</strong>: Reduce the number of bits without losing any original data</li>
+                <li><strong>Lossy compression</strong>: Significantly reduce the number of bits but provides an approximation of original data</li>
                 <ul>
                     <li>Minimize data → Lossy; Data is important, cannot be changed → Lossless</li>
                 </ul>
@@ -186,9 +187,9 @@
         <section>
             <h3>2.3 Extracting Information from Data</h3>
             <ul>
-                <li><em>Information</em>: Collection of facts and patterns extracted from data</li>
+                <li><strong>Information</strong>: Collection of facts and patterns extracted from data</li>
                 <li>More data → More opportunities for identifying trends, connections, addressing problems, finding correlations</li>
-                <li><em>Metadata</em>: Data about data
+                <li><strong>Metadata</strong>: Data about data
                     <ul>
                         <li>Ex. Date of an image taken. Data size of an image. Location of the image. But the image is not part of metadata</li>
                         <li>Helpful for finding, organizing, and managing information</li>
@@ -201,7 +202,7 @@
                     </ul>
                 </li>
                 <li>Large data sets are difficult to process for a single computer and may need parallel systems</li>
-                <li><em>Scalability</em>: Measure of a system’s ability to increase/decrease performance in response to changes in system processing demands</li>
+                <li><strong>Scalability</strong>: Measure of a system’s ability to increase/decrease performance in response to changes in system processing demands</li>
             </ul>
         </section>
 
@@ -242,6 +243,8 @@
                     <li>II. To estimate the number of phone calls that will be placed next Monday between 10:30 A.M. and noon.</li>
                     <li>III. To generate a list of criminal suspects when given the telephone number of a known criminal</li>
                 </ul>
+                <p>(A) I only (B) II only (C) II and III only (D) I, II, and III</p>
+                <p><em>I’ll (hopefully) add more during the winter break.</em></p>
             </div>
         </div>
     </div>
